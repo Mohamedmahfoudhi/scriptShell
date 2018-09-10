@@ -21,6 +21,6 @@ function err_handler {
 
 	# sauvegarde mysql DB
 	 mysqldump --user=mydbuser --password=mypass mydatabase | gzip > $dirbackup/mysqldump-$backupdate.sql.gz
-
-	 find $dirbackup -mtime+8 -exec rm{}\
+	#supprimer les anciennes sauvegardes qui datent de plus une semaine
+	 find $dirbackup -mtime+7 -exec rm{}\
 
